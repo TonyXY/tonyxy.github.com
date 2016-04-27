@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>tags | Tony Fed</title>
+  <title>通过正则方式获取url带的参数 | Tony Fed</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+  <meta name="description" content="1234567891011121314function getQueryObject(url) &amp;#123;    url = url == null ? window.location.href : url;    var search = url.substring(url.lastIndexOf(&quot;?&quot;) + 1);    var obj = &amp;#123;&amp;#125;;    var reg">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通过正则方式获取url带的参数">
+<meta property="og:url" content="http://yoursite.com/2016/04/27/getUrlParams/index.html">
 <meta property="og:site_name" content="Tony Fed">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-04-27T06:35:59.063Z">
+<meta property="og:description" content="1234567891011121314function getQueryObject(url) &amp;#123;    url = url == null ? window.location.href : url;    var search = url.substring(url.lastIndexOf(&quot;?&quot;) + 1);    var obj = &amp;#123;&amp;#125;;    var reg">
+<meta property="og:updated_time" content="2016-04-27T06:56:48.549Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description">
+<meta name="twitter:title" content="通过正则方式获取url带的参数">
+<meta name="twitter:description" content="1234567891011121314function getQueryObject(url) &amp;#123;    url = url == null ? window.location.href : url;    var search = url.substring(url.lastIndexOf(&quot;?&quot;) + 1);    var obj = &amp;#123;&amp;#125;;    var reg">
   
   
     <link rel="icon" href="/favicon.png">
@@ -42,7 +42,7 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -223,11 +223,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-getUrlParams" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/tags/index.html" class="article-date">
-      <time datetime="2016-04-27T06:35:59.000Z" itemprop="datePublished">2016-04-27</time>
+      <a href="/2016/04/27/getUrlParams/" class="article-date">
+      <time datetime="2016-04-27T06:55:30.000Z" itemprop="datePublished">2016-04-27</time>
 </a>
     </div>
   
@@ -240,7 +240,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      tags
+      通过正则方式获取url带的参数
     </h1>
   
 
@@ -257,96 +257,87 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> getQueryObject(url) &#123;</span><br><span class="line">    url = url == null ? window.location.href : url;</span><br><span class="line">    var search = url.substring(url.lastIndexOf(<span class="string">"?"</span>) + 1);</span><br><span class="line">    var obj = &#123;&#125;;</span><br><span class="line">    var reg = /([^?&amp;=]+)=([^?&amp;=]*)/g;</span><br><span class="line">    search.replace(reg,<span class="keyword">function</span>(rs, <span class="variable">$1</span>, <span class="variable">$2</span>) &#123;</span><br><span class="line">         var name = decodeURLComponent(<span class="variable">$1</span>);</span><br><span class="line">         var val = decodeURLComponent(<span class="variable">$2</span>);</span><br><span class="line">         var val = String(val);</span><br><span class="line">         obj[name] = val;</span><br><span class="line">         <span class="built_in">return</span> rs;</span><br><span class="line">     &#125;);</span><br><span class="line">    <span class="built_in">return</span> obj;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
-
-    <!-- Tag Cloud Page -->
-    <hr>
-<br>
-
-
-<p class="count"></p>
-
-<div class="tags">
-    
-</div>
-<style>
-    .category-list li{
-        display: inline-block;
-        margin: 0 1em .5em 0;
-        padding: 4px;
-        border: 1px solid lightgray;
-        font-size: 1.2rem;
-    }
-    .category-list a { color: gray; }
-    .category-list-item:hover a {
-        color: gray;
-        text-decoration: none;
-    }
-    .category-list-count {
-        margin-left: 2px;
-        font-size: .9rem;
-    }
-    .article-entry ul li:before{ display: none; }
-    .article-inner { text-align: center; }
-    .tags {
-        max-width: 42em;
-        margin: 2em auto;
-        margin-top: 0em;
-    }
-    .tags a {
-        margin-right: 1em;
-        line-height: 65px;
-        border-bottom: 1px solid gray;
-        white-space: nowrap;
-        transition: border-bottom .5s;
-    }
-    .tags a:hover {
-        border-bottom: 3px dotted gray;
-        text-decoration: none;
-    }
-    #count > span {
-        margin: auto .2em;
-        font-weight: bold;
-    }
-</style>
-
-<!-- Count tags and categories -->
-<p id="count">
-         <span><script>document.write($(".category-list-item").length)</script></span>Categories,
-         <span><script>document.write($(".tags > a").length)</script></span>Tags
-</p>
-<script>
-    $('#count').appendTo('.count');
-</script>
-
-          
-        
       
     </div>
     
   </div>
   
     
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2016/04/27/getUrlParams/">通过正则方式获取url带的参数</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">Tony Xiao</a></p>
+        <p><span>Created:</span>2016-04-27, 14:55:30</p>
+        <p><span>Updated:</span>2016-04-27, 14:56:48</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2016/04/27/getUrlParams/" title="通过正则方式获取url带的参数">http://yoursite.com/2016/04/27/getUrlParams/</a>
+            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2016/04/27/getUrlParams/　　By Tony Xiao" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
 
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/04/27/common-use-css/">
+                    常用css
+                </a>
+            </div>
+        
+    </nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+<script>
+    var valueHide = "Hide";
+    var valueShow = "Show";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
 
 
 
@@ -364,7 +355,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"tags　| Tony Fed　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"通过正则方式获取url带的参数　| Tony Fed　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -379,6 +370,24 @@
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/04/27/common-use-css/" title="Next: 常用css">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/04/27/getUrlParams/">通过正则方式获取url带的参数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/27/common-use-css/">常用css</a></li></ul>
 
 
 
