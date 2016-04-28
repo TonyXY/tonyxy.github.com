@@ -746,10 +746,6 @@ a {
   text-align: left;
   line-height: 30px;
 }
-.search {
-  position: relative;
-  margin-bottom: 18px;
-}
 #header .header-nav .social {
   margin-top: 10px;
   text-align: center;
@@ -940,6 +936,25 @@ a {
 }
 #disqus_thread {
   padding: 0 40px;
+}
+.search {
+  width: 68%;
+  height: 18px;
+  margin-top: 1px;
+  padding: 0;
+  font-family: inherit;
+  border: 2px solid transparent;
+  border-bottom: 2px solid #d3d3d3;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  opacity: 0.2;
+  background: none;
+}
+.search:hover {
+  border: 2px solid #d3d3d3;
+  opacity: 1;
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 #scroll {
   right: 0;
@@ -2865,6 +2880,9 @@ pre .javascript .function {
   .youyan {
     padding: 20px 10px;
   }
+}
+.search {
+  padding: 1em 0 0 2.5em;
 }
 .search input {
   line-height: 1.8em;
